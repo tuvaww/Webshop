@@ -1,0 +1,23 @@
+// Mixins
+@import "mixins";
+@import "variables";
+
+// Style repeated elements
+@import "./elements/header";
+@import "./elements/footer";
+
+// Style separate elements
+@import "./elements/maincontent";
+@import "./elements/product-page";
+@import "./elements/product-spec";
+@import "./elements/cart";
+@import "./elements/checkout.scss";
+@import "./elements/thanku";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $lightgrey;
+}

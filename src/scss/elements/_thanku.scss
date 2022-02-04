@@ -1,0 +1,123 @@
+.gifLogo {
+  height: 250px;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+.gifHeader {
+  font-family: $header-font;
+  font-size: 14pt;
+  margin: 0;
+  @include for-phone-landscape-up {
+    font-size: 16pt;
+  }
+  @include for-tablet-landscape-up {
+    font-size: 18pt;
+  }
+}
+
+.orderContainer {
+  display: flex;
+  justify-content: center;
+
+  .orderInfoContainer {
+    width: 85%;
+    background-color: $white;
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+    border-radius: 0 0 5px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $primary-font;
+    .shippingOrderContainer {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .backBtnContainer {
+    margin-bottom: 30px;
+  }
+  .backToShoppingButton {
+    cursor: pointer;
+    text-decoration: none;
+    color: $black;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+    background-color: $lightpink;
+    font-family: $primary-font;
+    padding: 4px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  .backToShoppingButton:hover {
+    transform: scale(1.05);
+  }
+
+  .orderedItems {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+
+    .itemsDescription {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      gap: 30px;
+
+      border-bottom: 1px solid rgb(185, 176, 176);
+      border-top: 1px solid rgb(185, 176, 176);
+    }
+
+    .itemsThanku {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: $primary-font;
+      gap: 30px;
+      width: 100%;
+      border-bottom: 1px solid rgb(185, 176, 176);
+
+      .quantity,
+      .imgOrdered,
+      .priceOnItem {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .thankuHeader {
+    font-family: $header-font;
+  }
+}
+
+.containerOfDescriptions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .showOrderHeader,
+  .orderedQTYHeader,
+  .orderedPriceHeader {
+    width: 26%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include for-tablet-landscape-up {
+      width: 25%;
+    }
+    @include for-desktop-up {
+      width: 23%;
+    }
+  }
+}
+
+.orderConfirmation {
+  display: none;
+}

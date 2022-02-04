@@ -1,0 +1,185 @@
+.floatingcart {
+  width: 70px;
+  height: 45px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-family: $primary-font;
+  background-color: #fe959782;
+  border-radius: 10px;
+  z-index: 100;
+
+  a {
+    text-decoration: none;
+  }
+}
+#floatingcartnumber {
+  color: $darkpink;
+  font-size: 13px;
+  position: relative;
+  text-align: center;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.bi-bag {
+  font-size: 35px;
+  color: $darkpink;
+  position: absolute;
+  top: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bounce {
+  width: 70px;
+  height: 45px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-family: $primary-font;
+  background-color: #fe959782;
+  border-radius: 10px;
+  animation: bounce 2s ease infinite;
+
+  a {
+    text-decoration: none;
+  }
+}
+@keyframes bounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+  70% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.productpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 89%;
+  margin-bottom: 30px;
+
+  .cart {
+    display: none;
+  }
+
+  h2 {
+    font-family: $header-font;
+    font-size: 43px;
+  }
+
+  .category {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 90%;
+    box-shadow: 0 0 3px $black;
+    border-radius: 5px;
+    padding: 30px;
+    margin: 10px 0;
+  }
+
+  h3 {
+    margin: 5px 5px 25px 30px;
+    font-family: $header-font;
+    font-size: 25px;
+  }
+  .dogcontainer {
+    display: flex;
+    align-self: center;
+    overflow-x: scroll;
+    width: 100%;
+    height: 100%;
+  }
+  .dogproduct {
+    font-family: $primary-font;
+    width: 200px;
+    margin: 0 20px;
+
+    .dogimgcontainer {
+      position: relative;
+    }
+
+    img {
+      cursor: pointer;
+      clip-path: polygon(100% 0, 100% 100%, 26% 100%, 0 80.7%, 0 0);
+      border-radius: 5px;
+      width: 200px;
+    }
+    .hover {
+      transform: scale(1.03);
+      border-radius: 2px;
+    }
+
+    h5 {
+      font-weight: 800;
+      font-size: 20px;
+      margin: 7px 0;
+    }
+    p {
+      margin: 0px;
+      font-weight: 200;
+      font-size: 15px;
+    }
+  }
+}
+.cartSymbolContainer {
+  cursor: pointer;
+  border: 2px $blue solid;
+  border-radius: 5px;
+  clip-path: polygon(0 79%, 0% 100%, 25% 100%);
+  padding: 105px;
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+
+  i:hover {
+    animation: wiggle 2.2s infinite;
+  }
+  @keyframes wiggle {
+    0% {
+      transform: rotate(0deg);
+    }
+    20% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(25deg);
+    }
+    30% {
+      transform: rotate(-25deg);
+    }
+    35% {
+      transform: rotate(25deg);
+    }
+    40% {
+      transform: rotate(-25deg);
+    }
+    45% {
+      transform: rotate(25deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+  }
+  i {
+    color: $black;
+    font-size: 14px;
+    position: absolute;
+    padding: 6px;
+    bottom: 0px;
+    left: 0;
+  }
+}

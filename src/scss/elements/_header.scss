@@ -1,0 +1,273 @@
+header {
+  display: flex;
+  flex-direction: column;
+}
+.outerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .blueContainer {
+    height: 70%;
+    width: 100%;
+    background-color: $blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    top: 0;
+
+    .pinkContainer {
+      width: 85%;
+      margin-top: 35px;
+      border-radius: 5px 5px 0 0;
+      background-color: $lightpink;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+
+      .menuContainer {
+        display: none;
+
+        @include for-tablet-landscape-up {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 75%;
+          margin: 30px 0;
+          height: 50px;
+
+          a {
+            transition: 0.3s ease;
+            cursor: pointer;
+            color: $black;
+            font-family: $header-font;
+            cursor: pointer;
+            text-decoration: none;
+            border-top: 1px solid $lightpink;
+            border-bottom: 1px solid $lightpink;
+            border-bottom-width: 0px;
+            padding: 15px 0;
+          }
+          a:hover {
+            border-bottom: 1px solid black;
+            padding: 5px 0;
+            border-bottom-width: thin;
+          }
+        }
+      }
+
+      /* hamburgermeny */
+      .menu {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: 100%;
+        @include for-tablet-landscape-up {
+          display: none;
+        }
+      }
+      .nav {
+        display: flex;
+        justify-content: center;
+        left: 0;
+        right: 0;
+        ul {
+          visibility: hidden;
+          position: fixed;
+          top: 33px;
+          z-index: -1;
+          margin: auto;
+          padding: 0;
+          opacity: 0;
+          transition: all 200ms ease-in-out;
+          list-style: none;
+          font-family: $header-font;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 150px;
+        }
+        li {
+          padding: 10px;
+        }
+        a {
+          color: black;
+          text-decoration: none;
+        }
+      }
+
+      .burgerCircle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        z-index: 100;
+        right: 30px;
+        top: 30px;
+        width: 60px;
+        height: 60px;
+        border: none;
+        border-radius: 50%;
+        padding: 0;
+        background: $yellow;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        cursor: pointer;
+
+        > span {
+          // the second divider
+          display: inline-block;
+          position: relative;
+          height: 2px;
+          width: 30px;
+          border-radius: 1px;
+          background: $black;
+
+          // pinnarna
+          &:before,
+          &:after {
+            display: inline-block;
+            position: absolute;
+            content: "";
+            height: 2px;
+            border-radius: 1px;
+            background: $black;
+            transition: all 200ms;
+          }
+          &:before {
+            top: -9px;
+            left: 4px;
+            width: 22px;
+          }
+          &:after {
+            top: 9px;
+            left: 4px;
+            width: 22px;
+          }
+        }
+        //pin--aninmation
+        &:hover > span:after,
+        &:hover > span:before {
+          width: 30px;
+          left: 0;
+        }
+      }
+
+      // for the nav background
+      .nav:before {
+        position: fixed;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        content: "";
+        top: 0;
+        width: 100vw;
+        height: 50vh;
+        z-index: 100;
+        background: $darkpink;
+        transition: all 500ms ease-in-out;
+        clip-path: circle(30px at calc(100% - 65px) 65px);
+        visibility: hidden;
+      }
+
+      .menu.active {
+        nav {
+          display: flex;
+          justify-content: center;
+        }
+        ul {
+          visibility: visible;
+          z-index: 200;
+          opacity: 100%;
+          color: $black;
+          li {
+            a {
+              color: $black;
+            }
+          }
+        }
+        .nav:before {
+          visibility: visible;
+          clip-path: circle(100%);
+          z-index: 100;
+          position: fixed;
+          top: 20px;
+          border-radius: 10px;
+          width: 100%;
+          height: 200px;
+        }
+        //pinn-animation
+        .burgerCircle {
+          span {
+            height: 0;
+            &:after,
+            &:before {
+              top: 0;
+              left: 0;
+              width: 30px;
+            }
+          }
+          &:after {
+            transform: rotate(-45deg);
+          }
+          &:before {
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+    .logoImageContainer {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+
+      .phoneLogo {
+        width: 60%;
+        border-radius: 5px;
+        margin: 30px;
+        @include for-tablet-landscape-up {
+          display: none;
+        }
+      }
+      .desktopLogo {
+        display: none;
+        @include for-tablet-landscape-up {
+          display: flex;
+          margin: 0;
+          width: 70%;
+        }
+      }
+    }
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  width: 80%;
+
+  @include for-tablet-landscape-up {
+    display: flex;
+    justify-content: center;
+  }
+  .logoName {
+    font-size: 20pt;
+    font-family: $header-font;
+    margin: 0;
+    max-width: 200px;
+
+    a {
+      text-decoration: none;
+      color: $black;
+    }
+
+    @include for-tablet-landscape-up {
+      font-size: 30pt;
+      max-width: none;
+      text-align: center;
+    }
+  }
+}

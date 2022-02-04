@@ -1,0 +1,48 @@
+.greyContainer {
+  background-color: $lightgrey;
+  width: 100%;
+  height: max-content;
+}
+
+.contentContainer {
+  display: flex;
+  justify-content: center;
+  background-color: $lightgrey;
+}
+
+.descriptionContainer {
+  width: 85%;
+  box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 50px;
+    line-height: 30px;
+
+    @include for-tablet-landscape-up {
+      font-size: 35px;
+      line-height: 40px;
+      padding: 30px 140px;
+    }
+    h3 {
+      font-family: $header-font;
+      font-size: 30px;
+    }
+    p {
+      font-family: $primary-font;
+      font-size: 23px;
+    }
+  }
+  img {
+    width: 220px;
+  }
+}

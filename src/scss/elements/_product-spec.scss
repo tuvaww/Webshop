@@ -1,0 +1,61 @@
+.specproductpage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin-bottom: 50px;
+
+  h3 {
+    margin: 5px 5px 25px 30px;
+    font-family: $header-font;
+    font-size: 30px;
+  }
+  .dogcontainer {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+  }
+  .dogproduct {
+    font-family: $primary-font;
+    width: 200px;
+
+    .dogimgcontainer {
+      position: relative;
+    }
+
+    img {
+      clip-path: polygon(100% 0, 100% 100%, 26% 100%, 0 80.7%, 0 0);
+      border-radius: 5px;
+      width: 200px;
+    }
+
+    p {
+      margin: 10px 0;
+      font-weight: 100;
+      font-size: 15px;
+    }
+  }
+}
+
+.specCategory {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 0 3px $black;
+  border-radius: 5px;
+  padding: 30px;
+  margin: 10px 0;
+}
+
+.backArrow {
+  cursor: pointer;
+  margin: 30px 0 20px 0;
+  i {
+    cursor: pointer;
+    font-size: 40px;
+  }
+}
